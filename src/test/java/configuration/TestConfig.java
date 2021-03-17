@@ -2,7 +2,11 @@ package configuration;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources("classpath:${environment}.properties")
+@Config.LoadPolicy(Config.LoadType.MERGE)
+@Config.Sources({"system:properties",
+                 "classpath:local.properties",
+                 "classpath:${environment}.properties"
+                 })
 public interface TestConfig extends Config {
 
     @Key("remote.url")

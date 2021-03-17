@@ -1,16 +1,15 @@
 package tests;
 
-import configuration.TestBase;
 import org.junit.jupiter.api.Test;
 import pages.PracticeFormPage;
 
 public class PracticeFormTest extends TestBase {
 
-    PracticeFormPage practiceFormPage;
+    //PracticeFormPage practiceFormPage;
 
     @Test
     void fillPracticeFormTest() {
-        practiceFormPage = new PracticeFormPage();
+        PracticeFormPage practiceFormPage = new PracticeFormPage();
 
         practiceFormPage.openPage();
         practiceFormPage.fillForm();

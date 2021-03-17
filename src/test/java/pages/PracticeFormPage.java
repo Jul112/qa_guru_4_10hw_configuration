@@ -2,6 +2,7 @@ package pages;
 
 import com.github.javafaker.Faker;
 import io.qameta.allure.Step;
+import tests.TestBase;
 
 import java.io.File;
 
@@ -12,7 +13,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static utils.RandomUtils.*;
 
-public class PracticeFormPage {
+public class PracticeFormPage extends TestBase {
     Faker faker = new Faker();
     String name = faker.name().firstName();
     String lastName = faker.name().lastName();

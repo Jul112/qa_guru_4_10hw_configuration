@@ -1,28 +1,29 @@
-package configuration;
+package tests;
 
 import com.codeborne.selenide.Configuration;
+import configuration.TestConfig;
 import org.aeonbits.owner.ConfigFactory;
-//import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 
-//import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
-//import static helpers.AttachmentsHelper.attachScreenshot;
+import static helpers.AttachmentsHelper.*;
 
-public class TestBase{
+public class TestBase {
 
     @BeforeAll
     static void setup() {
         final TestConfig config = ConfigFactory.create(TestConfig.class, System.getProperties());
+
         Configuration.browser = config.getBrowser();
         Configuration.browserVersion = config.getBrowserVersion();
         Configuration.startMaximized = true;
 
-        if (config.getRemoteDriverUrl()!=null) {
-            Configuration.remote = config.getRemoteDriverUrl();
-        }
+//       if (config.getRemoteDriverUrl()!=null) {
+//            Configuration.remote = config.getRemoteDriverUrl();
+//        }
     }
 
-    /*@AfterEach
+    @AfterEach
     public void afterEach() {
         attachScreenshot("Last Screenshot");
         attachPageSource();
@@ -30,5 +31,5 @@ public class TestBase{
         if (System.getProperty("video_storage")!=null) {
             attachVideo();
         }
-    }*/
+    }
 }
