@@ -1,8 +1,8 @@
-package Configuration;
+package configuration;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources("classpath:${source}.properties")
+@Config.Sources("classpath:${environment}.properties")
 public interface TestConfig extends Config {
 
     @Key("remote.url")
